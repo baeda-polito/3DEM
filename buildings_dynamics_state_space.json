@@ -1,0 +1,42 @@
+{
+  "Building_1": {
+    "month": true,
+    "day": true,
+    "hour": true,
+    "t_out": true,
+    "direct_solar_rad": true,
+    "t_in": true,
+    "q_cooling": true,
+    "occupancy": true
+  },
+  "Building_2": {
+    "month": true,
+    "day": true,
+    "hour": true,
+    "t_out": true,
+    "direct_solar_rad": true,
+    "t_in": true,
+    "q_cooling": true,
+    "occupancy": true
+  },
+  "Building_3": {
+    "month": true,
+    "day": true,
+    "hour": true,
+    "t_out": true,
+    "direct_solar_rad": true,
+    "t_in": true,
+    "q_cooling": true,
+    "occupancy": true
+  },
+  "Building_4": {
+    "month": true,
+    "day": true,
+    "hour": true,
+    "t_out": true,
+    "direct_solar_rad": true,
+    "t_in": true,
+    "q_cooling": true,
+    "occupancy": true
+  }
+}

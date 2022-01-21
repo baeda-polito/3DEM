@@ -1,0 +1,16 @@
+gym==0.17.2
+numpy==1.18.4
+pandas==1.2.1
+pandoc==1.0.2
+pathlib==1.0.1
+Pillow==7.1.2
+scikit-learn==0.23.1
+scipy==1.5.2
+sklearn==0.0
+stable-baselines==2.10.0
+tensorboard==1.14.0
+tensorflow==1.14.0
+tensorflow-estimator==1.14.0
+torch==1.6.0
+torchvision==0.7.0
+utils==1.0.1
