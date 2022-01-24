@@ -218,7 +218,7 @@ Represents the data-driven model used to simulate the building dynamic, typicall
 <br />
 <p align="center">
   <a href="https://github.com/baeda-polito/3DEM/images/input_nn.png">
-    <img src="images/input_nn.png" alt="Input_nn" width="600" height="200">
+    <img src="images/input_nn.png" alt="Input_nn" width="600" height="600">
   </a>
   <p align="center">
   </p>
