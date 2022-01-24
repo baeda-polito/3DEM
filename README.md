@@ -205,6 +205,34 @@ Represents the data-driven model used to simulate the building dynamic, typicall
  - ```n_hidden```: number of neurons of the hidden layer
  - ```n_layers```: number of LSTM layer
 
+- Input of the neural network
+ - ```month```: 1 (January) through 12 (December)
+ - ```day```: type of day as provided by EnergyPlus (from 1 to 8). 1 (Sunday), 2 (Monday), ..., 7 (Saturday), 8 (Holiday)
+ - ```hour```: hour of day (from 1 to 24).
+ - ```t_out```: outdoor temperature in Celsius degrees.
+ - ```direct_solar_radiation```: direct solar radiation in W/m^2.
+ - ```t_in```: indoor temperature in Celsius degrees.
+ - ```q_cooling```: cooling energy provided by the heat pump to the building in kW.
+ - ```occupancy```: variable to assess the presence or absence of occupants.
+
+<br />
+<p align="center">
+  <a href="https://github.com/baeda-polito/3DEM/images/input_nn.png">
+    <img src="images/input_nn.png" alt="Input_nn" width="600" height="200">
+  </a>
+  <p align="center">
+  </p>
+
+- Load your own model
+In order to use different buildings, the following steps must be followed:
+ - Train a neural network with pytorch and load the models in the folder ```Building_models```.
+ - Modify the file ```buildings_dynamics_state_space.json``` with the state needed for the neural network training
+ - Modify the ```building_attributes.json``` with the new neural network attributes
+ - Modify the ```citylearn_3dem``` file to load neural network information
+ - Modify the min and max csv to properly normalize the neural network
+
+
+
 ## Environment variables
 The file [buildings_state_action_space.json](/buildings_state_action_space.json) contains all the states and action variables that the buildings can possibly return:
 ### Possible states
@@ -212,7 +240,7 @@ The file [buildings_state_action_space.json](/buildings_state_action_space.json)
 - ```day```: type of day as provided by EnergyPlus (from 1 to 8). 1 (Sunday), 2 (Monday), ..., 7 (Saturday), 8 (Holiday)
 - ```hour```: hour of day (from 1 to 24).
 - ```daylight_savings_status```: indicates if the building is under daylight savings period (0 to 1). 0 indicates that the building has not changed its electricity consumption profiles due to daylight savings, while 1 indicates the period in which the building may have been affected.
-- ```t_out```: outdoor temperature in Celcius degrees.
+- ```t_out```: outdoor temperature in Celsius degrees.
 - ```t_out_pred_6h```: outdoor temperature predicted 6h ahead (accuracy: +-0.3C)
 - ```t_out_pred_12h```: outdoor temperature predicted 12h ahead (accuracy: +-0.65C)
 - ```t_out_pred_24h```: outdoor temperature predicted 24h ahead (accuracy: +-1.35C)
@@ -228,7 +256,7 @@ The file [buildings_state_action_space.json](/buildings_state_action_space.json)
 - ```direct_solar_rad_pred_6h```: direct solar radiation predicted 6h ahead (accuracy: +-2.5%)
 - ```direct_solar_rad_pred_12h```: direct solar radiation predicted 12h ahead (accuracy: +-5%)
 - ```direct_solar_rad_pred_24h```: direct solar radiation predicted 24h ahead (accuracy: +-10%)
-- ```t_in```: indoor temperature in Celcius degrees.
+- ```t_in```: indoor temperature in Celsius degrees.
 - ```avg_unmet_setpoint```: average difference between the indoor temperatures and the cooling temperature setpoints in the different zones of the building in Celcius degrees. sum((t_in - t_setpoint).clip(min=0) * zone_volumes)/total_volume
 - ```rh_in```: indoor relative humidity in %.
 - ```non_shiftable_load```: electricity currently consumed by electrical appliances in kWh.
