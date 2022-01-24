@@ -40,7 +40,7 @@ Currently, 3DEM allows controlling the storage of domestic hot water (DHW), chil
 <br />
 <p align="center">
   <a href="https://github.com/baeda-polito/3DEM/images/framework.png">
-    <img src="images/framework.png" alt="framework" width="600" height="600">
+    <img src="images/framework.png" alt="framework" width="600" height="400">
   </a>
   <p align="center">
   </p>
@@ -124,7 +124,7 @@ Currently, 3DEM allows controlling the storage of domestic hot water (DHW), chil
 <br />
 <p align="center">
   <a href="https://github.com/baeda-polito/3DEM/images/methodology.png">
-    <img src="images/framework.png" alt="methodology" width="600" height="600">
+    <img src="images/methodology.png" alt="methodology" width="600" height="400">
   </a>
   <p align="center">
   </p>
