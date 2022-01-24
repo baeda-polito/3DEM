@@ -129,7 +129,3 @@ plt.show()
 
 costo_sac,costo_tot = economic_cost(env,building_ids)
 discomfort = discomfort(env,building_ids)
-
-
-#Todo aggiungere dati in input alla rete nella documentazione, inserire immagine
-#todo fare una sezione per far capire come modificare e aggiungere le proprie reti
