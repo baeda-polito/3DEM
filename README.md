@@ -36,6 +36,14 @@
 Districts and cities have periods of high demand for electricity, which raise electricity prices and the overall cost of the power distribution networks. Flattening, smoothening, and reducing the overall curve of electrical demand helps reduce operational and capital costs of electricity generation, transmission, and distribution networks. Demand response is the coordination of electricity consuming agents (i.e. buildings) in order to reshape the overall curve of electrical demand.
 Furthermore, building thermal mass can be used as an additional source of energy flexibility, if properly harnessed. Furthermore, demand response should not influence users comfort, requiring for a precise representation of the internal environment. 3DEM allows the easy implementation of reinforcement learning agents in a multi-agent setting to control HVAC and storage of multiple buildings, with the aim to reshape their aggregated curve of electrical demand, while ensuring users comfort. 
 Currently, 3DEM allows controlling the storage of domestic hot water (DHW), chilled water and HVAC (for sensible cooling and dehumidification). 3DEM also includes models of air-to-water heat pumps, electric heaters, solar photovoltaic arrays, and pre-computed energy loads of the buildings, that can be used as benchmarks for indoor environment temperature evolution.
+
+<br />
+<p align="center">
+  <a href="https://github.com/baeda-polito/3DEM/images/framework.png">
+    <img src="images/framework.png" alt="framework" width="600" height="600">
+  </a>
+  <p align="center">
+  </p>
 ## Dependencies
 3DEM requires the installation of the following Python libraries:
 - gym==0.17.2
@@ -113,6 +121,14 @@ Currently, 3DEM allows controlling the storage of domestic hot water (DHW), chil
 
 
 
+<br />
+<p align="center">
+  <a href="https://github.com/baeda-polito/3DEM/images/methodology.png">
+    <img src="images/framework.png" alt="methodology" width="600" height="600">
+  </a>
+  <p align="center">
+  </p>
+  
 ### CityLearn_3dem
 This class of type OpenAI Gym Environment contains all the buildings and their subclasses.
 - CityLearn_3dem attributes (all in kWh)
