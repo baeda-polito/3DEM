@@ -46,6 +46,7 @@ Currently, 3DEM allows controlling the storage of domestic hot water (DHW), chil
   </p>
 ## Dependencies
 3DEM requires the installation of the following Python libraries:
+
 - gym==0.17.2
 - numpy==1.18.4
 - pandas==1.2.1
@@ -239,8 +240,9 @@ Represents the data-driven model used to simulate the building dynamic, typicall
   <p align="center">
   </p>
 
-- Load your own model
-In order to use different buildings, the following steps must be followed:
+## Load your own model
+
+In order to load different buildings, the next steps must be followed:
  - Train a neural network with pytorch and load the models in the folder ```Building_models```.
  - Modify the file ```buildings_dynamics_state_space.json``` with the state needed for the neural network training
  - Modify the ```building_attributes.json``` with the new neural network attributes
@@ -292,7 +294,7 @@ The file [buildings_state_action_space.json](/buildings_state_action_space.json)
 - ```el_price_pred_3h```: electricity price prediction 3h ahead $/kWh.
 - ```deltaT```: temperature difference between the set point and the internal temperature in °C.
 ### Possible actions
-- ```heat_pump_to_buildng```: amount of cooling energy provided by the heat pump to the building as a funciton of the heat pump nominal power.
+- ```heat_pump_to_buildng```: amount of cooling energy provided by the heat pump to the building as a funciton of the heat pump nominal power (action >= 0 & <=1).
 - ```cooling_storage```: increase (action > 0) or decrease (action < 0) of the amount of cooling energy stored in the cooling storage device. -1.0 <= action <= 1.0 (attempts to decrease or increase the cooling energy stored in the storage device by an amount equal to the action times the storage device's maximum capacity). In order to decrease the energy stored in the device (action < 0), the energy must be released into the building. Therefore, the state of charge will not decrease proportionally to the action taken if the demand for cooling of the building is lower than the action times the maximum capacity of the cooling storage device.
 - ```dhw_storage```: increase (action > 0) or decrease (action < 0) of the amount of DHW stored in the DHW storage device. -1.0 <= action <= 1.0 (attempts to decrease or increase the DHW stored in the storage device by an amount equivalent to action times its maximum capacity). In order to decrease the energy stored in the device, the energy must be released into the building. Therefore, the state of charge will not decrease proportionally to the action taken if the demand for DHW of the building is lower than the action times the maximum capacity of the DHW storage device.
 
