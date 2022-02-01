@@ -314,8 +314,8 @@ The mathematics of this control logic can be seen in the methods ```set_storage_
 - ```building_loader(demand_file, weather_file, buildings)``` receives a dictionary with all the building instances and their respectives IDs, and loads them with the data of heating and cooling loads from the simulations.
 - ```auto_size(buildings, t_target_heating, t_target_cooling)``` automatically sizes the heat pumps and the storage devices. It assumes fixed target temperatures of the heat pump for heating and cooling, which combines with weather data to estimate their hourly COP for the simulated period. The ```HeatPump``` is sized such that it will always be able to fully satisfy the heating and cooling demands of the building. This function also sizes the ```EnergyStorage``` devices, setting their capacity as 3 times the maximum hourly cooling demand in the simulated period.
 - ```economic_cost(env,building_ids)``` evaluates the economic costs of single buildings and the entire district.
-- ```KPIs(env,building_ids)``` evaluates a series of KPIs for the entire district.
-- ```discomfort(env,building_ids)``` evaluates discomfort metrics for each building.
+- ```KPIs(env,building_ids)``` evaluates a series of KPIs for the entire district including: 'Cost', 'Peak', 'PAR', 'Daily Peak', 'Daily PAR', 'Flexibility Factor'
+- ```discomfort(env,building_ids)``` evaluates discomfort metrics for each building including: 'Hour of cold discomfort','Hour of hot discomfort','Degree of cold discomfort','Degree of hot discomfort','Average cold discomfort','Average hot discomfort'
 
 ## Cite 3DEM
 - [Pinto G., Deltetto D., and Capozzoli A., "Data-Driven District Energy Management with surrogate models and deep reinforcement learning", Applied Energy, 2021](https://www.sciencedirect.com/science/article/abs/pii/S0306261921010096?via%3Dihub)

@@ -174,7 +174,7 @@ def building_loader(data_path, building_attributes, weather_file, solar_profile,
                 weather_data = pd.read_csv(csv_file)
 
             building.sim_results['t_out'] = list(
-                weather_data['Outdoor Drybulb Temperature [C]'][simulation_period[0]:simulation_period[1] + 1])
+                 weather_data['Outdoor Drybulb Temperature [C]'][simulation_period[0]:simulation_period[1] + 1])
             building.sim_results['rh_out'] = list(
                 weather_data['Outdoor Relative Humidity [%]'][simulation_period[0]:simulation_period[1] + 1])
             building.sim_results['diffuse_solar_rad'] = list(
@@ -305,8 +305,8 @@ def building_loader(data_path, building_attributes, weather_file, solar_profile,
                         s_high_central_agent.append(300)
 
                     elif state_name == 'T_lstm':
-                        minT = 25 #min_value.iloc[index-1,-1]
-                        maxT = 27 #max_value.iloc[index-1,-1]
+                        minT = 20 #min_value.iloc[index-1,-1]
+                        maxT = 32 #max_value.iloc[index-1,-1]
                         s_low.append(minT)
                         s_high.append(maxT)
                         s_low_central_agent.append(minT)
