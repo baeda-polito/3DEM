@@ -37,7 +37,7 @@ def results(env,building_ids):
 
     daily_cost = np.reshape(env.buildings[building_ids[0]].sim_results['el_price'][0:2196-12], (-1, 24))
     daily_cost = pd.DataFrame(daily_cost)
-    mask = daily_cost == 0.03025
+    mask = daily_cost == min(env.buildings[building_ids[0]].sim_results['el_price'][:])
 
     consumption_daily_24 = np.reshape(env.net_electric_consumption[11:], (-1, 24))
     consumption_daily_24 = pd.DataFrame(consumption_daily_24)

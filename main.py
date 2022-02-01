@@ -7,7 +7,7 @@ from citylearn_3dem import RBC_Agent
 import matplotlib.pyplot as plt
 from stable_baselines import SAC
 from stable_baselines.sac.policies import FeedForwardPolicy
-from functions import economic_cost, discomfort
+from functions import economic_cost, discomfort,results
 
 class CustomSACPolicy(FeedForwardPolicy):
     def __init__(self, *args, **kwargs):
@@ -115,17 +115,3 @@ while dones==False:
     counter.append(rewards)
     actions.append(action)
 cost_sac = env.cost()
-
-
-
-Tlstm = env.buildings['Building_1'].lstm_results['T_lstm']
-Set_point = env.buildings['Building_1'].sim_results['set_point']
-
-plt.plot(Tlstm[:200])
-plt.plot(Set_point[:200])
-plt.show()
-
-
-
-costo_sac,costo_tot = economic_cost(env,building_ids)
-discomfort = discomfort(env,building_ids)
