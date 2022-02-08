@@ -563,7 +563,7 @@ class CityLearn_3dem(gym.Env):
                     nn_dynamics = np.array(nn_dynamics)
                     nn_scaled = np.zeros((len(nn_dynamics), len(nn_dynamics[:][0])))
 
-                    h = self.hidden_list[index-1]
+                    h = self.hidden_list[self.building_ids.index('Building_'+str(index))]
 
                     # using the two csv normalize the input of the nn (only works with consecutive building indexes)
                     max_norm = np.array(max_value.iloc[index - 1, :])
@@ -582,7 +582,7 @@ class CityLearn_3dem(gym.Env):
 
                     building.lstm_results['T_lstm'][self.time_step] = T_in_lstm.item()
 
-                    self.hidden_list[index-1] = h
+                    self.hidden_list[self.building_ids.index('Building_'+str(index))] = h
                     count = count + 1
 
                 # -----------------------nn_dynamics ending point
@@ -702,7 +702,7 @@ class CityLearn_3dem(gym.Env):
                     nn_dynamics = np.array(nn_dynamics)
                     nn_scaled = np.zeros((len(nn_dynamics), len(nn_dynamics[:][0])))
 
-                    h = self.hidden_list[index-1]
+                    h = self.hidden_list[self.building_ids.index('Building_'+str(index))]
                     # using the two csv normalize the input of the nn (only works with consecutive building indexes)
                     max_norm = np.array(max_value.iloc[index - 1, :])
                     min_norm = np.array(min_value.iloc[index - 1, :])
@@ -717,7 +717,7 @@ class CityLearn_3dem(gym.Env):
 
                     T_in_lstm = test_output * (max_norm[-1] - min_norm[-1]) + min_norm[-1]
                     building.lstm_results['T_lstm'][self.time_step] = T_in_lstm.item()
-                    self.hidden_list[index-1] = h
+                    self.hidden_list[self.building_ids.index('Building_'+str(index))] = h
                     count = count + 1
                     # -----------------------nn_dynamics ending point
                     # -----------------------focus on storage actions

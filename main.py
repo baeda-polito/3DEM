@@ -26,7 +26,8 @@ solar_profile = data_path / 'solar_generation_1kW.csv'
 building_state_actions = Path("buildings_state_action_space.json")
 building_dynamics_state = Path("buildings_dynamics_state_space.json")
 el_data = data_path / 'electricity_price.csv'
-building_ids = ['Building_1']
+building_ids = ['Building_1','Building_3']
+
 
 objective_function = ['ramping','1-load_factor','average_daily_peak','peak_demand','net_electricity_consumption','quadratic']
 
