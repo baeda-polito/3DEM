@@ -11,6 +11,7 @@ stable-baselines==2.10.0
 tensorboard==1.14.0
 tensorflow==1.14.0
 tensorflow-estimator==1.14.0
+--find-links https://download.pytorch.org/whl/torch_stable.html
 torch==1.6.0
 torchvision==0.7.0
 utils==1.0.1
