@@ -229,7 +229,7 @@ Represents the data-driven model used to simulate the building dynamic, typicall
  - ```t_out```: outdoor temperature in Celsius degrees.
  - ```direct_solar_radiation```: direct solar radiation in W/m^2.
  - ```t_in```: indoor temperature in Celsius degrees.
- - ```q_cooling```: cooling energy provided by the heat pump to the building in kW.
+ - ```q_cooling```: cooling energy provided by the heat pump to the building in kWh.
  - ```occupancy```: variable to assess the presence or absence of occupants.
 
 <br />
